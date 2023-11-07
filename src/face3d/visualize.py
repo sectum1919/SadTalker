@@ -27,7 +27,7 @@ def gen_composed_video(args, device, first_frame_coeff, coeff_path, audio_path, 
     
     video = cv2.VideoWriter(tmp_video_path, cv2.VideoWriter_fourcc(*'mp4v'), 25, (224, 224))
 
-    for k in tqdm(range(coeff_pred.shape[0]), 'face3d rendering:'):
+    for k in range(coeff_pred.shape[0]):
         cur_coeff_full = torch.tensor(coeff_full[k:k+1], device=device)
 
         facemodel.forward(cur_coeff_full, device)

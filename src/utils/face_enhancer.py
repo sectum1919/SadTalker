@@ -108,7 +108,7 @@ def enhancer_generator_no_len(images, method='gfpgan', bg_upsampler='realesrgan'
         bg_upsampler=bg_upsampler)
 
     # ------------------------ restore ------------------------
-    for idx in tqdm(range(len(images)), 'Face Enhancer:'):
+    for idx in range(len(images)):
         
         img = cv2.cvtColor(images[idx], cv2.COLOR_RGB2BGR)
         
